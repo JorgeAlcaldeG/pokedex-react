@@ -1,0 +1,11 @@
+.appContainer{
+    margin: auto;
+    margin-top: 10%;
+    width: 90%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* padding: 5%; */
+}
