@@ -6,7 +6,7 @@ export default function Square ({name,id}){
     const imgurl = URL.IMGURL+id+".png";
     return(
         <div className='pkmContainer'>
-            <Link to={`profile/${id}`}>
+        <Link to={`profile/${id}`}>
             <img className="sprite" src={imgurl} />
             <p className="pkmName">{name}</p>
         </Link>

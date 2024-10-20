@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Square from '../Square.jsx';
 import {URL} from "../consts";
+import '../../css/home.css';
 export default function Home (){
     const [pkm, setPkm] = useState([]);
     useEffect(()=>{
