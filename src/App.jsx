@@ -8,9 +8,9 @@ function App() {
     const [marco, setmarco] = useState("marco1");
     
     if(marco == "marco1"){
-        var marcoSrc = '../resources/interfaz/Marco1.png'
+        var marcoClass = 'marco marco1'
     }else{
-        var marcoSrc = '../resources/interfaz/Marco2.png'
+        var marcoClass = 'marco marco2'
     }
     const router = createBrowserRouter([
         {
@@ -36,7 +36,7 @@ function App() {
         }
       return (
         <>
-            <img className="marco" src={marcoSrc} alt="fondo" />
+            <img className={marcoClass} alt="fondo" />
             <div className="appContainer">
                 <img src="../../resources/interfaz/configBtn.png" className="configBtn" onClick={()=>{handleClick(marco)}} />
                 <RouterProvider router={router} />

@@ -15,7 +15,7 @@ a{
     padding: 0%;
     cursor: pointer;
     transition: all .2s ease-out;
-    width: 17%;
+    width: 20%;
 }
 .pkmContainer:hover{
     filter: drop-shadow(0px 0px 1.2em #ffffff);
@@ -31,4 +31,14 @@ a{
     font-weight: bold;
     margin-bottom: 5%;
     color: white;
+}
+
+@media screen and (orientation:portrait) {
+    .pkmContainer{
+        border-width: 1px;
+        box-shadow: inset 0px 0px 1em 0.1em rgba(0,0,0,1);
+    }
+    .pkmContainer:hover{
+        filter: drop-shadow(0px 0px 1.2em #ffffff);
+    }
 }

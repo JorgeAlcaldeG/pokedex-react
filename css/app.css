@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     justify-content: center;
     /* padding: 5%; */
+    margin-bottom: 10%;
 }
 
 body{
@@ -43,10 +44,25 @@ body{
     z-index: 100;
     pointer-events: none;
 }
-/* .marco1{
+.marco1{
     content: url("../resources/interfaz/Marco1.png");
 }
 
 .marco2{
     content: url("../resources/interfaz/Marco2.png");
-} */
+}
+
+@media screen and (orientation:portrait) {
+    .marco1{
+        content: url("../resources/interfaz/Marco1_mov.png");
+    }
+    .marco2{
+        content: url("../resources/interfaz/Marco2_mov.png");
+    }
+    .appContainer{
+        margin: auto;
+        margin-top: 20%;
+        margin-bottom: 12%;
+        width: 80%;
+    }
+}

@@ -14,3 +14,11 @@
     filter: drop-shadow(0px 0px 3px #ffffff);
     transform: rotate(360deg);
 }
+
+@media screen and (orientation:portrait) {
+    .configBtn{
+        width: 5%;
+        right: 7.5%;
+        top: 8%;
+    }
+}
