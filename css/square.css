@@ -15,7 +15,18 @@ a{
     padding: 0%;
     cursor: pointer;
     transition: all .2s ease-out;
+}
+.container-3{
+    width: 25%;
+}
+.container-4{
     width: 20%;
+}
+.container-5{
+    width: 16%;
+}
+.container-6{
+    width: 15%;
 }
 .pkmContainer:hover{
     filter: drop-shadow(0px 0px 1.2em #ffffff);
