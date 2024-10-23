@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Square from '../Square.jsx';
+import SinRes from '../SinRes.jsx';
 import {URL} from "../consts";
 import '../../css/home.css';
 export default function Home (){
@@ -29,6 +30,7 @@ export default function Home (){
         console.log(value)
         setRows(value) 
     }
+
     return(
         <>
             <div className='filtroContainer'>
@@ -36,10 +38,11 @@ export default function Home (){
             </div>
             <div className='rowsContainer'>
                 <p>Número de pokemons por fila</p>
-                <select name="numRows" id="numRows" onChange={rowHandler}>
+                <select name="numRows" id="numRows" onChange={rowHandler} defaultValue={rows}>
+                    
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5" defaultValue>5</option>
+                    <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
             </div>
@@ -56,7 +59,9 @@ export default function Home (){
                     </Square>
                 )
             })}
-            {/* {pkm.length == 0 } */}
+            {
+                pkm.length == 0 ? <SinRes /> : ""
+            }
         </>
     )
 }
