@@ -39,7 +39,6 @@ export default function Home (){
             <div className='rowsContainer'>
                 <p>Número de pokemons por fila</p>
                 <select name="numRows" id="numRows" onChange={rowHandler} defaultValue={rows}>
-                    
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
