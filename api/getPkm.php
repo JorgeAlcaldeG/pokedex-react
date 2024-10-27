@@ -22,7 +22,7 @@ try {
         $pkm = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
     }else{
         $id = $_GET["id"];
-        $sel = "SELECT p.pokemon_id AS 'id', p.pokemon_name AS 'nombre', p.pokemon_categoria AS 'categoria', p.pokemon_description AS 'desc', t.type_name AS 'tipo1',t2.type_name AS 'tipo2', r.region_name AS 'region', a1.ability_name_es AS 'hab1',a1.ability_desc AS 'hab1_des',a2.ability_name_es AS 'hab2',a2.ability_desc AS 'hab2_des', a3.ability_name_es AS 'hab3',a3.ability_desc AS 'hab3_des', s.ps AS 'ps',s.atk AS 'atk',s.def AS 'def',s.spa AS 'spa',s.spd AS 'spd',s.spe AS 'spe'
+        $sel = "SELECT p.pokemon_id AS 'id', p.pokemon_name AS 'nombre', p.pokemon_categoria AS 'categoria', p.pokemon_description AS 'desc', t.type_id AS 'tipo1',t2.type_id AS 'tipo2', r.region_name AS 'region', a1.ability_name_es AS 'hab1',a1.ability_desc AS 'hab1_des',a2.ability_name_es AS 'hab2',a2.ability_desc AS 'hab2_des', a3.ability_name_es AS 'hab3',a3.ability_desc AS 'hab3_des', s.ps AS 'ps',s.atk AS 'atk',s.def AS 'def',s.spa AS 'spa',s.spd AS 'spd',s.spe AS 'spe'
             FROM tbl_pokemon p 
             INNER JOIN tbl_types t ON p.pokemon_type1 = t.type_id
             LEFT JOIN tbl_types t2 ON p.pokemon_type2 = t2.type_id

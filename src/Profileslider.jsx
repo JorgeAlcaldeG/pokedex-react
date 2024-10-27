@@ -51,6 +51,8 @@ export default function Profileslider() {
                 hab1={data.hab1}
                 hab2={data.hab2}
                 hab3={data.hab3}
+                type1={data.tipo1}
+                type2={data.tipo2}
               />
             </div>
           </div>
