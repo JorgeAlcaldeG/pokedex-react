@@ -6,7 +6,7 @@ import '../../css/home.css';
 export default function Home (){
     const [pkm, setPkm] = useState([]);
     const [src,setSrc] = useState("");
-    const [rows, setRows] = useState(5);
+    const [rows, setRows] = sessionStorage.getItem("numFilas") === null ? useState(5) : useState(sessionStorage.getItem("numFilas"));
     useEffect(()=>{
         let link = document.querySelector("link[rel~='icon']");
         link.href = `${URL.MAINURL}`;
@@ -27,8 +27,9 @@ export default function Home (){
     }
     const rowHandler=()=>{
         var value = document.getElementById("numRows").value;
-        console.log(value)
+        // console.log(value)
         setRows(value) 
+        sessionStorage.setItem("numFilas", value)
     }
 
     return(
