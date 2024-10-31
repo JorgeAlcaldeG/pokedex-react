@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import { useParams } from 'react-router';
 import Home from './pages/Home.jsx';
 import Profile from './pages/Profile.jsx';
 import '../css/app.css';
 // import '../css/main.css';
 function App() {
+    const id= useParams();
     const [marco, setmarco] = sessionStorage.getItem("skin") === null ? useState('marco1') : useState(sessionStorage.getItem("skin"))
     if(marco == "marco1"){
         var marcoClass = 'marco marco1'
@@ -22,7 +24,11 @@ function App() {
           },
       ]);
         const handleClick = (skin) =>{
-            var form = '<div class="skinOptContainer"> <label class="optlabel"><input type="radio" id="marco1" name="skin" value="marco1" class="framechk"><img class="frameconfimg" src="./resources/interfaz/Marco1.png" alt="Option 1"></label><label class="optlabel"><input type="radio" id="marco2" name="skin" value="marco2" class="framechk"><img class="frameconfimg" src="./resources/interfaz/Marco2.png" alt="Option 2"></label></div>'
+            if(id.length == 0){
+                var form = '<div class="skinOptContainer"> <label class="optlabel"><input type="radio" id="marco1" name="skin" value="marco1" class="framechk"><img class="frameconfimg" src="./resources/interfaz/Marco1.png" alt="Option 1"></label><label class="optlabel"><input type="radio" id="marco2" name="skin" value="marco2" class="framechk"><img class="frameconfimg" src="./resources/interfaz/Marco2.png" alt="Option 2"></label></div>'
+            }else{
+                var form = '<div class="skinOptContainer"> <label class="optlabel"><input type="radio" id="marco1" name="skin" value="marco1" class="framechk"><img class="frameconfimg" src="../resources/interfaz/Marco1.png" alt="Option 1"></label><label class="optlabel"><input type="radio" id="marco2" name="skin" value="marco2" class="framechk"><img class="frameconfimg" src="../resources/interfaz/Marco2.png" alt="Option 2"></label></div>'
+            }
             Swal.fire({
                 title: "Cambio de skin",
                 html: form,
@@ -36,7 +42,7 @@ function App() {
                     sessionStorage.setItem("skin",document.querySelector('input[name="skin"]:checked').value)
                 }
             });
-            document.getElementById(sessionStorage.getItem("skin")).checked = true;
+            document.getElementById(marco).checked = true;
         }
       return (
         <>

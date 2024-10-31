@@ -1,0 +1,40 @@
+.backBtn {
+    width: 5%;
+    position: fixed;
+    top: 87%;
+    left: 4.5%;
+    border-style: solid;
+    border-color: white;
+    padding: .5%;
+    border-radius: 30px;
+    /* text-align: end; */
+    padding-right: 1%;
+    font-weight: bold;
+    color: white;
+
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(255,255,255,.7);
+    -moz-box-shadow: inset 0px 0px 10px 2px rgba(255,255,255,.7);
+    box-shadow: inset 0px 0px 10px 2px rgba(255,255,255,.7);
+    transition: 0.2s ease-in;
+}
+.backIcon{
+    width: 20%;
+}
+.ButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    transition: 0.2s ease-in;
+    width: 100%;
+}
+
+.backBtn:hover .ButtonContainer{
+    transition: 0.2s ease-in;
+    transform: translateX(-20px);
+}
+.backBtn:hover{
+    -webkit-box-shadow: inset 0px 0px 12px 2px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px 0px 12px 2px rgba(255,255,255,1);
+    box-shadow: inset 0px 0px 12px 2px rgba(255,255,255,1);
+    transition: 0.2s ease-in;
+}

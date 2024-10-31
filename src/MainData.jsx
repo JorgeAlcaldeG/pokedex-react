@@ -5,9 +5,10 @@ import '../css/MainData.css';
 export default function MainData( {nombre, cat, reg, desc, hab1, hab2, hab3, type1, type2} ){
     const id = useParams();
     const imgurl = URL.IMGURL+id.pkmid+".png";
+    var hideType2;
     hab2 === null ? hab2='': hab2 =` - ${hab2}`;
     hab3 === null ? hab3='':'';
-    type2 === null ? type2='':'';
+    type2 === null ? hideType2='hideType typeImg': hideType2='typeImg';
     // id.pkmid
     return(
         <>
@@ -34,7 +35,7 @@ export default function MainData( {nombre, cat, reg, desc, hab1, hab2, hab3, typ
                         <h2 className="subtitulo">Tipos</h2>
                         <div className="typeContainer">
                             <img src={`${URL.TYPEURL}${type1}.png`} alt="tipo1" className="typeImg" />
-                            <img src={`${URL.TYPEURL}${type2}.png`} alt="tipo2" className="typeImg" />
+                            <img src={`${URL.TYPEURL}${type2}.png`} alt="tipo2" className={hideType2} />
                         </div>
                     </div>
 

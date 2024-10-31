@@ -57,3 +57,8 @@ hr{
 .subtitulo{
     font-style: italic;
 }
+
+.hideType{
+    visibility: hidden;
+    width: 0%;
+}

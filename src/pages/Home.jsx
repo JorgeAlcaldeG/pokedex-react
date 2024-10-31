@@ -10,6 +10,7 @@ export default function Home (){
     useEffect(()=>{
         let link = document.querySelector("link[rel~='icon']");
         link.href = `${URL.MAINURL}`;
+        document.body.style.overflow = 'initial';
     },[])
     useEffect(()=>{
         fetch(`${URL.APIURL}getPkm.php?src=${src}`)

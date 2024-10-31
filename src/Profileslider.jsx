@@ -7,6 +7,7 @@ import "../css/Profileslider.css";
 import { useParams } from 'react-router';
 import MainData from "./MainData.jsx";
 import {URL} from "./consts.js";
+import SubData from "./subData.jsx";
 export default function Profileslider() {
     const [data, setdata] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +18,16 @@ export default function Profileslider() {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      // appendDots: dots => (
+      //   <div
+      //     style={{
+      //       borderRadius: "10px",
+      //       padding: "10px"
+      //     }}
+      //   >
+      //     <ul style={{ margin: "0px" }}> {dots} </ul>
+      //   </div>
+      // ),
     };
     useEffect(() => {
       fetch(`${URL.APIURL}getPkm.php?id=${id.pkmid}`)
@@ -26,7 +37,7 @@ export default function Profileslider() {
               setdata(data);
               setIsLoading(false);
           }else{
-              console.log(data["detail"])
+              // console.log(data["detail"])
               setIsLoading(false);
           }
       })
@@ -38,7 +49,7 @@ export default function Profileslider() {
     if (isLoading) {
     return <div>Loading...</div>;
     }
-    console.log(data)
+
     return (
         <Slider {...settings}>
           <div>
@@ -58,7 +69,14 @@ export default function Profileslider() {
           </div>
           <div>
             <div className="slide">
-              <h3>2</h3>
+              <SubData 
+                ps={data.ps}
+                atk={data.atk}
+                spatk={data.spa}
+                def={data.def}
+                sdef={data.spd}
+                spd={data.spe}
+              />
             </div>
           </div>
           <div>

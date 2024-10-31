@@ -1,0 +1,15 @@
+.statName{
+    text-align: left;
+    margin-bottom: .5%;
+    margin-top: .5%;
+}
+.barra{
+    background-color: white;
+    border-radius: 10px;
+    height: 2vh;
+    margin-top: 0%;
+}
+.BarraContainer{
+    width: 90%;
+    padding-left: 7%;
+}
