@@ -17,6 +17,7 @@ export default function Profileslider() {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
+      draggable:false,
       slidesToScroll: 1,
       // appendDots: dots => (
       //   <div
