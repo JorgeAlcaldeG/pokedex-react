@@ -7,7 +7,7 @@ import "../css/Profileslider.css";
 import { useParams } from 'react-router';
 import MainData from "./MainData.jsx";
 import {URL} from "./consts.js";
-import SubData from "./subData.jsx";
+import SubData from "./SubData.jsx";
 export default function Profileslider() {
     const [data, setdata] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +37,7 @@ export default function Profileslider() {
           if(typeof data["status"] == 'undefined'){
               setdata(data);
               setIsLoading(false);
+              document.title = data.nombre
           }else{
               // console.log(data["detail"])
               setIsLoading(false);

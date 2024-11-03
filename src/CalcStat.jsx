@@ -24,14 +24,22 @@ export default function CalcStat({ishp, base, nat, name, lvlnum, dimVal}){
             setTotal(Math.trunc((Math.trunc(((((2*base)+parseInt(ivs)+Math.trunc((evs/4)))*parseInt(lvlnum))/100))+5)*mult))
         }
     },[evs, ivs, lvlnum, nat])
-
     return(
         <div className="statElem">
-            <input type="number" value={total} readOnly />
-            <input type="number" value={evs} max={252} min={0} onChange={(event) => setEvs(event.target.value)} />
+            <input type="number" className="inputnum" value={total} readOnly />
+            <input type="number" className="inputnum" value={evs} max={252} min={0} onChange={(event) => {
+                    event.target.value < 0 ?  event.target.value = 0 : '';
+                    event.target.value > 252 ?  event.target.value = 252 : '';
+                    event.target.value == "" ? setEvs(0) : setEvs(event.target.value);
+                }} />
             <input type="range" min={0} max={252} value={evs} onChange={(event) => setEvs(event.target.value)} />
-            <input type="number" defaultValue={ivs} min={0} max={31} onChange={(event) => setIvs(event.target.value)} />
-            <label>{name}</label>
+            <input type="number" className="inputnum" defaultValue={ivs} min={0} max={31} onChange={(event) => {
+                    event.target.value < 0 ?  event.target.value = 0 : '';
+                    event.target.value > 31 ?  event.target.value = 31 : '';
+                    event.target.value == "" ? setIvs(0) : setIvs(event.target.value);
+                }} />
+            <input type="number" className="inputnum" value={base} readOnly />
+            <label className="statLabel">{name}</label>
         </div>
     )
 }

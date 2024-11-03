@@ -36,12 +36,20 @@ export default function Calculadora({ps,atk,spatk,def,sdef,spd}){
         setNat(document.getElementById('nat').value)
     }
     function lvlHandler(){
-        setlvl(document.getElementById('lvl').value)
+        var lvlInput = document.getElementById('lvl').value;
+        if(lvlInput < 0 || lvlInput == ""){
+            lvlInput = 0
+        }
+        if(lvlInput > 100){
+            lvlInput = 100
+        }
+        document.getElementById("lvl").value = lvlInput;
+        setlvl(lvlInput)
     }
     return(
         <>
             <select id="nat" onChange={natHandler}></select>
-            <input type="number" name="lvl" id="lvl" defaultValue={lvl} onKeyUp={lvlHandler} />
+            <input type="number" name="lvl" id="lvl" className="inputnum" defaultValue={lvl} onKeyUp={lvlHandler} />
             <div className="calcContainer">
                 <CalcStat 
                     name='Vida'
