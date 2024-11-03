@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import {URL} from './consts.js'
 import CalcStat from "./CalcStat.jsx";
-export default function Calculadora(){
+import '../css/calculadora.css';
+export default function Calculadora({ps,atk,spatk,def,sdef,spd}){
 
     const [lvl, setlvl] = useState(50);
     const [nat, setNat] = useState("")
@@ -34,18 +35,63 @@ export default function Calculadora(){
     function natHandler(){
         setNat(document.getElementById('nat').value)
     }
+    function lvlHandler(){
+        setlvl(document.getElementById('lvl').value)
+    }
     return(
         <>
-        <select id="nat" onChange={natHandler}></select>
-        <input type="number" name="lvl" id="lvl" defaultValue={lvl} />
-        <CalcStat 
-            name='Vida'
-            base={80}
-            lvlnum={lvl}
-            ishp={true}
-            nat = {nat}
-            dimVal = ''
-        />
+            <select id="nat" onChange={natHandler}></select>
+            <input type="number" name="lvl" id="lvl" defaultValue={lvl} onKeyUp={lvlHandler} />
+            <div className="calcContainer">
+                <CalcStat 
+                    name='Vida'
+                    base={ps}
+                    lvlnum={lvl}
+                    ishp={true}
+                    nat = {nat}
+                    dimVal = ''
+                />
+                <CalcStat 
+                    name='Ataque'
+                    base={atk}
+                    lvlnum={lvl}
+                    ishp={false}
+                    nat = {nat}
+                    dimVal = 'Atk'
+                />
+                <CalcStat 
+                    name='Ataque Esp.'
+                    base={spatk}
+                    lvlnum={lvl}
+                    ishp={false}
+                    nat = {nat}
+                    dimVal = 'SpA'
+                />
+                <CalcStat 
+                    name='Defensa'
+                    base={def}
+                    lvlnum={lvl}
+                    ishp={false}
+                    nat = {nat}
+                    dimVal = 'Def'
+                />
+                <CalcStat 
+                    name='Defensa Esp.'
+                    base={sdef}
+                    lvlnum={lvl}
+                    ishp={false}
+                    nat = {nat}
+                    dimVal = 'SpD'
+                />
+                <CalcStat 
+                    name='Velocidad'
+                    base={spd}
+                    lvlnum={lvl}
+                    ishp={false}
+                    nat = {nat}
+                    dimVal = 'Vel'
+                />
+            </div>
         </>
     )
 }

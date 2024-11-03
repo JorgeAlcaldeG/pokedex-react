@@ -35,7 +35,14 @@ export default function SubData({ps,atk,spatk,def,sdef,spd}){
                 />      
             </div>
             <div className="subContainer calcCont">
-                <Calculadora />
+                <Calculadora 
+                    ps={ps}
+                    atk={atk}
+                    spatk={spatk}
+                    def={def}
+                    sdef={sdef}
+                    spd={spd}
+                />
             </div>
             <div className="habContainer">
             <hr />

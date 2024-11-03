@@ -4,7 +4,6 @@ import "../css/calcStat.css"
 export default function CalcStat({ishp, base, nat, name, lvlnum, dimVal}){
     const [evs, setEvs] = useState(0);
     const [ivs, setIvs] = useState(31);
-    const [lvl, setLvl] = useState(lvlnum);
     const [total, setTotal] = useState(0);
     var natBase = nat.split('-')
     var mult = 1
@@ -15,24 +14,24 @@ export default function CalcStat({ishp, base, nat, name, lvlnum, dimVal}){
             mult = 0.9
         }
     }
+    // console.log(`${natBase[0]} - ${mult}`)
     const [natVal, setNat] = useState(mult);
+    // console.log(lvlnum)
     useEffect(()=>{
         if(ishp){
-            setTotal(Math.trunc(((((2*base)+ivs+(evs/4))*lvl)/100)+lvl+10))
+            setTotal(Math.trunc(((((2*base)+parseInt(ivs)+(evs/4))*parseInt(lvlnum))/100)+parseInt(lvlnum)+10))
+        }else{
+            setTotal(Math.trunc((Math.trunc(((((2*base)+parseInt(ivs)+Math.trunc((evs/4)))*parseInt(lvlnum))/100))+5)*mult))
         }
-    },[evs, ivs])
-    // useEffect(()=>{
-    //     if(ishp){
-    //         setTotal(Math.trunc(((((2*base)+ivs+(evs/4))*lvl)/100)+lvl+10))
-    //     }
-    // },[])
+    },[evs, ivs, lvlnum, nat])
+
     return(
         <div className="statElem">
-            <label>{name}</label>
-            <input type="number" defaultValue={ivs} min={0} max={31} onChange={(event) => setIvs(event.target.value)} />
-            <input type="range" min={0} max={252} value={evs} onChange={(event) => setEvs(event.target.value)} />
-            <input type="number" value={evs} max={252} min={0} onChange={(event) => setEvs(event.target.value)} />
             <input type="number" value={total} readOnly />
+            <input type="number" value={evs} max={252} min={0} onChange={(event) => setEvs(event.target.value)} />
+            <input type="range" min={0} max={252} value={evs} onChange={(event) => setEvs(event.target.value)} />
+            <input type="number" defaultValue={ivs} min={0} max={31} onChange={(event) => setIvs(event.target.value)} />
+            <label>{name}</label>
         </div>
     )
 }
