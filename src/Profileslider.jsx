@@ -78,6 +78,12 @@ export default function Profileslider() {
                 def={data.def}
                 sdef={data.spd}
                 spd={data.spe}
+                hab1={data.hab1_des}
+                hab2={data.hab2_des}
+                hab3={data.hab3_des}
+                hab1n={data.hab1}
+                hab2n={data.hab2}
+                hab3n={data.hab3}
               />
             </div>
           </div>
