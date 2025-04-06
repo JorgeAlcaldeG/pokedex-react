@@ -1,6 +1,6 @@
 # Pokedex on react
 
-This project it's a Pokedex developed on **React**, where the users can search an check detailed data about different pokemon.
+This project it's a Pokedex developed on **React**, allowing users to search for Pokémon and view details such as their type, abilities, and stats.
 It's connected to an external API and displays data like stats, types and  habilites.
 
 ## Technology used
@@ -13,12 +13,13 @@ It's connected to an external API and displays data like stats, types and  habil
 - PHP
 - MySQL
 
-## Functionalities
+## Features
 
 - Searching by name.
 - Visualization of detailed info.
 - Responsive design.
 - Loading data from an external API (created by me using PHP).
+- Interactive UI with React and React Router
 
 ## What I learnt?
 
