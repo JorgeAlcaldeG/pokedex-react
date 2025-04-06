@@ -59,6 +59,9 @@ Custom your pokedex with 2 skins and number of Pokemon per row
 
 ![image](https://github.com/user-attachments/assets/fb690cfe-2b9f-44a8-a200-f63127fa1d47)
 
-*The stats are calculated using latest stat formula*
+*The stats are calculated using latest stat formula.*
 
+## Data base design
+
+![db_pokedex](https://github.com/user-attachments/assets/9c1c156b-3c4c-4308-ad27-8c4cd12ad8cc)
 
