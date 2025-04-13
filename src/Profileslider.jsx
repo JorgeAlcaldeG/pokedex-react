@@ -89,7 +89,6 @@ export default function Profileslider() {
           </div>
           <div>
             <div className="slide">
-              <h3>3</h3>
             </div>
           </div>
         </Slider>

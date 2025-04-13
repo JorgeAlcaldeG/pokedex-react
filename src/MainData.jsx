@@ -14,7 +14,7 @@ export default function MainData( {nombre, cat, reg, desc, hab1, hab2, hab3, typ
         <>
             <div className="img-col">
                 <img src={imgurl} className="mainImg"/>
-                <p className="subtext">Pulsa la imagen para reproducir el grito</p>
+                {/* <p className="subtext">Pulsa la imagen para reproducir el grito</p> */}
             </div>
             <div className="data-col">
                 <h1>Información general</h1>
